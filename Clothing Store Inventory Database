@@ -1,0 +1,33 @@
+create a story inventory database
+CREATE TABLE inventory
+(id INTEGER PRIMARY KEY, 
+item TEXT, 
+cost INTEGER, 
+sell_price INTEGER, 
+quantity INTEGER);
+
+insert 15 items into inventory 
+INSERT INTO inventory VALUES
+(1, "shirt", 3, 5, 10),
+(2, "pants", 4, 7, 8),
+(3, "socks", 2, 4, 12),
+(4, "jacket", 5, 10, 5),
+(5, "scarf", 2, 4, 7),
+(6, "shorts", 3, 6, 10),
+(7, "hoodie", 5, 10, 8),
+(8, "sweater", 6, 11, 8),
+(9, "dress", 7, 14, 6),
+(10, "skirt", 3, 6, 10),
+(11, "rain jacket", 5, 10, 6),
+(12, "beanie", 1, 3, 12),
+(13, "leggings", 3, 8, 8),
+(14, "boxers", 2, 4, 10),
+(15, "graphic tee", 4, 8, 7);
+SELECT * FROM inventory;
+
+
+display the database in ascending order by price 
+SELECT * FROM inventory ORDER BY sell_price ASC; 
+
+display only those items with a profit of 50% or higher
+SELECT * FROM inventory WHERE "sell_price" >= (2*"cost")
